@@ -94,7 +94,9 @@ export const DrawerStackLayoutBuilder = () => {
             >
               <Stack
                 style={{ width: "100%", height: "100%" }}
-                enableAddTab
+                TabstripProps={{
+                  allowAddTab: true,
+                }}
                 showTabs
               >
                 <View title="Page 1" style={{ flex: 1 }} resizeable />

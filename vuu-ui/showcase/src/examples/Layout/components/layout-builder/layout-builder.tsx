@@ -5,10 +5,11 @@ import {
   LayoutProvider,
   Palette,
   PaletteItem,
+  PaletteProps,
   View,
 } from "@finos/vuu-layout";
 import { Dropdown } from "@salt-ds/lab";
-import { useState } from "react";
+import { CSSProperties, useState } from "react";
 import { atom, useRecoilValue, useSetRecoilState } from "recoil";
 import { StatefulComponent } from "../stateful-component";
 
@@ -26,7 +27,7 @@ const LayoutPicker = ({ onCommit }) => {
   return <Dropdown onSelect={onCommit} values={availableValues} />;
 };
 
-const BuilderPalette = ({ props }) => {
+const BuilderPalette = (props: PaletteProps) => {
   return (
     <Palette {...props}>
       <PaletteItem header resizeable closeable title="Blue Monday">
@@ -102,7 +103,9 @@ export const LayoutBuilder = () => {
               flexShrink: 0,
             }}
           >
-            <BuilderPalette style={{ flex: 1, backgroundColor: "inherit" }} />
+            <BuilderPalette
+              style={{ flex: 1, backgroundColor: "inherit" } as CSSProperties}
+            />
             <div
               className="layout-edit-controls"
               style={{ backgroundColor: "red", width: 250 }}

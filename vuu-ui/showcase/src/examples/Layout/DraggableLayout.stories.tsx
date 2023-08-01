@@ -502,8 +502,10 @@ export const ComplexNestedLayout = () => {
 
                 <Flexbox resizeable style={{ flex: 1 }} path="">
                   <StackLayout
+                    TabstripProps={{
+                      allowAddTab: true,
+                    }}
                     showTabs
-                    enableAddTab
                     style={{ flex: 1 }}
                     keyBoardActivation="manual"
                   >
